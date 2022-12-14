@@ -88,13 +88,13 @@ let game= '';
 
 for(let i = 0; i < games.length; i++){
     let game = games[i] 
-    itemsContent += `<div class="item">
+    itemsContent += 
+    `<div class="item">
         <img src="./img/${game.img}">
         <div class="testo" >
             <h2>${game.titolo}</h2>
             <h5>${game.descrizione}</h5>
         </div>
-       
     </div>`
 }
 

@@ -48,26 +48,30 @@ body {
 .arrow{
     position: absolute;
     width: 40px;
-    background-color: rgba(174, 174, 174, 0.509);
     border-radius: 50px;
-    font-weight: 800; 
-    left: 50%;
-    font-size: 30px;
-    transform: translateX(-50%);
+    transform: translateX(-50%, -50%);
     text-align: center;
     cursor: pointer;
 }
 
 .next{
-    top: 5px; 
+    top: 50%;
+    right: 0px;
+    transform: translate(-50%);
+    color: white;
+    transition: 0.5s;
 }
 
 .prev{
-    bottom: 5px;
+    top: 50%;
+    left: 30px;
+    transform: translate(-50%);
+    color: white;
+    transition: 0.5s;
 }
 
 .prev:hover, .next:hover{
-    background-color: rgba(174, 174, 174, 1);   
+    color: rgb(121, 119, 119);
 }
 
 .item.active{
