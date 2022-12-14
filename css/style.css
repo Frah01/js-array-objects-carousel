@@ -113,7 +113,7 @@
 }
 
 #auto-pause {
-    background-color: white;
+    background-color: rgb(255, 92, 92);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -122,7 +122,7 @@
 
 #auto-pause:hover {
    cursor: pointer;
-   background-color: rgb(196, 196, 196);
+   background-color: rgb(255, 102, 102);
    box-shadow: 1px 1px 5px;
   
 

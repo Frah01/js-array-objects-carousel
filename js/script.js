@@ -26,6 +26,33 @@ function myAutoplay(){
 
 }
 
+function myReverseAutoplay(){
+    items[itemActive].classList.remove('active')
+        
+    if(itemActive-1 === -1){
+        itemActive = games.length -1
+        
+    } 
+
+    else {
+        itemActive--
+    }
+    
+    items[itemActive].classList.add('active')
+
+    circles[circleActive].classList.remove('active')
+
+    if(circleActive-1 === -1){
+        circleActive = games.length -1
+    }
+    
+    else {
+        circleActive--
+    }
+    
+    circles[circleActive].classList.add('active')
+}
+
 
 
 let games = [
@@ -91,6 +118,7 @@ circles[circleActive].classList.add('active');
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const rev = document.querySelector('.rev')
 
 
 let Autoplay = setInterval(myAutoplay,1000)
@@ -101,9 +129,19 @@ let Autoplay = setInterval(myAutoplay,1000)
 
 })
 
+
 document.getElementById('auto-pause').addEventListener('click', function(){
     clearInterval(Autoplay);
+
 })
+
+let ReverseAutoplay = setInterval(myReverseAutoplay,1000)
+
+document.getElementById('auto-reverse').addEventListener('click', function(){
+    ReverseAutoplay= setInterval(myReverseAutoplay,1000)
+})
+
+
 
 console.log(myAutoplay)
 
@@ -117,32 +155,11 @@ next.addEventListener('click', function(){
 
 prev.addEventListener('click', function(){
     
-    items[itemActive].classList.remove('active')
-        
-    if(itemActive-1 === -1){
-        itemActive = games.length -1
-        
-    } 
+    myReverseAutoplay();
 
-    else {
-        itemActive--
-    }
-    
-    items[itemActive].classList.add('active')
-
-    circles[circleActive].classList.remove('active')
-
-    if(circleActive-1 === -1){
-        circleActive = games.length -1
-    }
-    
-    else {
-        circleActive--
-    }
-    
-    circles[circleActive].classList.add('active')
+});
 
 
-})
+
 
 
