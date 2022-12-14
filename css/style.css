@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(233, 233, 233);
+}
+
 .container{
     height: 100vh;
     display: flex;
@@ -109,7 +113,7 @@
 #auto-play:hover {
     cursor: pointer;
     background-color: rgb(13, 112, 0);
-    box-shadow: 1px 1px 5px;
+    box-shadow: 1px 1px 5px black;
  
 
 }
@@ -125,22 +129,23 @@
 #auto-pause:hover {
    cursor: pointer;
    background-color: rgb(255, 102, 102);
-   box-shadow: 1px 1px 5px;
+   box-shadow: 1px 1px 5px black;
   
 
 }
 
 #auto-reverse {
-    background-color: orange;
+    background-color: rgb(0, 81, 255);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     margin: 0px 5px;
+    color: white;
 }
 
 #auto-reverse:hover {
     cursor: pointer;
-    box-shadow: 1px 1px 5px;
+    box-shadow: 1px 1px 5px black;
    
  
  }
