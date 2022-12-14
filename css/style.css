@@ -20,6 +20,7 @@
 .item{
     display: none;
     position: relative;
+    box-shadow: 1px 1px 5px black;
 }
 
 .testo {
@@ -101,6 +102,7 @@
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
+    color: white;
 
 }
 
@@ -127,3 +129,18 @@
   
 
 }
+
+#auto-reverse {
+    background-color: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+
+#auto-reverse:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 5px;
+   
+ 
+ }

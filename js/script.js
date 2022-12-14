@@ -59,7 +59,7 @@ let games = [
     {
         img : "01.webp",
         titolo : "Spiderman Miles Morales",
-        descrizione: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.",
+        descrizione: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.",
     },
     {
         img : "02.webp",
@@ -69,17 +69,17 @@ let games = [
     {
         img : "03.webp",
         titolo : "Fortnite",
-        descrizione: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.",
+        descrizione: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.Lorem, ipsum dolor sit amet consectetur.",
     },
     {
         img : "04.webp",
         titolo : "Stray",
-        descrizione : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.",
+        descrizione : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     },
     {
         img : "05.webp",
         titolo : "Marvel Avengers",
-        descrizione: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, odio soluta.",
+        descrizione: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     },
 ]
 
@@ -122,29 +122,31 @@ const rev = document.querySelector('.rev')
 
 
 let Autoplay = setInterval(myAutoplay,1000)
+let ReverseAutoplay = setInterval(myReverseAutoplay,1000)
 
  document.getElementById('auto-play').addEventListener('click', function(){
-    
+    clearInterval(ReverseAutoplay);
+    clearInterval(Autoplay);
     Autoplay = setInterval(myAutoplay,1000)
+    
 
 })
 
 
 document.getElementById('auto-pause').addEventListener('click', function(){
     clearInterval(Autoplay);
+    clearInterval(ReverseAutoplay);
 
 })
 
-let ReverseAutoplay = setInterval(myReverseAutoplay,1000)
+
 
 document.getElementById('auto-reverse').addEventListener('click', function(){
     ReverseAutoplay= setInterval(myReverseAutoplay,1000)
+    clearInterval(Autoplay);
 })
 
-
-
 console.log(myAutoplay)
-
 
 
 next.addEventListener('click', function(){
