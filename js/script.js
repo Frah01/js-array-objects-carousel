@@ -1,4 +1,33 @@
-//Creo array immagini
+function myAutoplay(){
+    
+    items[itemActive].classList.remove('active')
+        
+    if(itemActive+1 === games.length){
+        itemActive = 0
+    } 
+
+    else {
+        itemActive++
+    }
+    
+    items[itemActive].classList.add('active')
+
+    circles[circleActive].classList.remove('active')
+
+    if(circleActive+1 === games.length){
+        circleActive = 0
+    }
+    
+    else {
+        circleActive++
+    }
+    
+    circles[circleActive].classList.add('active')
+
+}
+
+
+
 let games = [
     {
         img : "01.webp",
@@ -42,20 +71,17 @@ for(let i = 0; i < games.length; i++){
     </div>`
 }
 
-//inseriamo le immagini nel div che le deve contenere
+
 const itemsSlider = document.querySelector('.item-slider');
 itemsSlider.innerHTML += itemsContent;
 
-//Prendiamo la prima immagine dell'array e la rendiamo attiva
 
-//const items = document.querySelector('.item'); //ALTERNATIVA
 
 const items = document.getElementsByClassName('item');
 let itemActive = 0;
 
 items[itemActive].classList.add('active');
 
-//rendo attivo anche il primo cerchio di navigazione
 
 const circles = document.getElementsByClassName('circle');
 let circleActive = 0;
@@ -66,32 +92,26 @@ circles[circleActive].classList.add('active');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
+
+let Autoplay = setInterval(myAutoplay,1000)
+
+ document.getElementById('auto-play').addEventListener('click', function(){
+    
+    Autoplay = setInterval(myAutoplay,1000)
+
+})
+
+document.getElementById('auto-pause').addEventListener('click', function(){
+    clearInterval(Autoplay);
+})
+
+console.log(myAutoplay)
+
+
+
 next.addEventListener('click', function(){
     
-    items[itemActive].classList.remove('active')
-        
-    if(itemActive+1 === games.length){
-        itemActive = 0
-    } 
-
-    else {
-        itemActive++
-    }
-    
-    items[itemActive].classList.add('active')
-
-    circles[circleActive].classList.remove('active')
-
-    if(circleActive+1 === games.length){
-        circleActive = 0
-    }
-    
-    else {
-        circleActive++
-    }
-    
-    circles[circleActive].classList.add('active')
-
+    myAutoplay();
 
 });
 
